@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components";
 import "./App.css";
 import theme from "./style/theme";
 import { GlobalStyle } from "./style/globalStyle";
-import ChattingRoom from "./pages/chattingRoom";
+import ChattingRoom from "./pages/ChattingRoom";
 
 function App() {
   return (
