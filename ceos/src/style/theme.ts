@@ -17,40 +17,40 @@ const colors = {
 
 const fonts = {
   bold24: css`
-    font-family: "Apple SD Gothic Neo";
+    font-family: "Apple SD Gothic Neo", sans-serif;
     font-size: 24px;
-    line-height: 100%;
     font-weight: bold;
+    line-height: 100%;
   `,
   bold18: css`
-    font-family: "Apple SD Gothic Neo";
+    font-family: "Apple SD Gothic Neo", sans-serif;
     font-size: 18px;
-    line-height: 100%;
     font-weight: bold;
+    line-height: 100%;
   `,
   bold16: css`
-    font-family: "Apple SD Gothic Neo";
+    font-family: "Apple SD Gothic Neo", sans-serif;
     font-size: 16px;
-    line-height: 120%;
     font-weight: normal;
+    line-height: 120%;
   `,
   medium14: css`
-    font-family: "Apple SD Gothic Neo";
+    font-family: "Apple SD Gothic Neo", sans-serif;
     font-size: 14px;
-    line-height: 132%;
     font-weight: normal;
+    line-height: 132%;
   `,
   bold12: css`
-    font-family: "Apple SD Gothic Neo";
+    font-family: "Apple SD Gothic Neo", sans-serif;
     font-size: 12px;
-    line-height: 100%;
     font-weight: bold;
+    line-height: 100%;
   `,
   medium12: css`
-    font-family: "Apple SD Gothic Neo";
+    font-family: "Apple SD Gothic Neo", sans-serif;
     font-size: 12px;
-    line-height: 100%;
     font-weight: normal;
+    line-height: 100%;
   `,
 };
 
