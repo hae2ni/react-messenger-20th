@@ -20,6 +20,37 @@ const fonts = {
     font-family: "Apple SD Gothic Neo";
     font-size: 24px;
     line-height: 100%;
+    font-weight: bold;
+  `,
+  bold18: css`
+    font-family: "Apple SD Gothic Neo";
+    font-size: 18px;
+    line-height: 100%;
+    font-weight: bold;
+  `,
+  medium16: css`
+    font-family: "Apple SD Gothic Neo";
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: normal;
+  `,
+  medium14: css`
+    font-family: "Apple SD Gothic Neo";
+    font-size: 14px;
+    line-height: 132%;
+    font-weight: normal;
+  `,
+  bold12: css`
+    font-family: "Apple SD Gothic Neo";
+    font-size: 12px;
+    line-height: 100%;
+    font-weight: bold;
+  `,
+  medium12: css`
+    font-family: "Apple SD Gothic Neo";
+    font-size: 12px;
+    line-height: 100%;
+    font-weight: normal;
   `,
 };
 
