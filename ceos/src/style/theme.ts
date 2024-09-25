@@ -28,7 +28,7 @@ const fonts = {
     font-weight: bold;
     line-height: 100%;
   `,
-  bold16: css`
+  medium16: css`
     font-family: "Apple SD Gothic Neo", sans-serif;
     font-size: 16px;
     font-weight: normal;
