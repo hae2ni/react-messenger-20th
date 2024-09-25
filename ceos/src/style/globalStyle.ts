@@ -8,13 +8,20 @@ ${reset}
   box-sizing: border-box;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  font-size: 62.5%
-}
+#root {
+    width: 375px;
+    height: 812px;
+    transform-origin: top left;
+    transform: scale(${(window.innerWidth / 312).toFixed(2)});
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 375px;
+    height: 812px;
+  
+  }
 
 a {
   color: inherit;
@@ -31,10 +38,10 @@ button {
 
 html {
   @font-face {
-    font-family: 'Apple SD Gothic Neo';
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
-      font-weight: normal;
-     src: url('https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo.css');
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo.css');
   }
 
 }

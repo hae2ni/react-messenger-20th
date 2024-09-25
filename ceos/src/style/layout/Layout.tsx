@@ -9,6 +9,6 @@ export default function Layout({ children }: LayoutProps) {
 }
 
 const MainContainer = styled.main`
-  width: 375px;
-  height: 812px;
+  display: flex;
+  height: 100vh;
 `;
