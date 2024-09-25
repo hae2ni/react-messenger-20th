@@ -1,5 +1,6 @@
 import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
+import { rowFlex } from "./commonStyle";
 
 export const GlobalStyle = createGlobalStyle`
 ${reset}
@@ -9,38 +10,39 @@ ${reset}
 }
 
 #root {
-    width: 375px;
-    height: 812px;
-    transform-origin: top left;
-    transform: scale(${(window.innerWidth / 312).toFixed(2)});
+${rowFlex}
+width: 100vw;
+height: 100vh;
+
   }
 
+
   html, body {
+    min-width: 375px;
+    min-height: 812px;
     margin: 0;
     padding: 0;
-    width: 375px;
-    height: 812px;
   
   }
 
 a {
+  cursor: pointer;
   color: inherit;
   text-decoration: none;
-  cursor: pointer;
 }
 
 button {
-  border: none;
-  background: none;
-  font: inherit;
   cursor: pointer;
+  font: inherit;
+  background: none;
+  border: none;
 }
 
 html {
   @font-face {
   font-family: 'Apple SD Gothic Neo';
-  font-style: normal;
   font-weight: normal;
+  font-style: normal;
   src: url('https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo.css');
   }
 
