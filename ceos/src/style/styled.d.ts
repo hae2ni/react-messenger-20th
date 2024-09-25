@@ -19,6 +19,11 @@ declare module "styled-components" {
 
     fonts: {
       bold24: SerializedStyles;
+      bold18: SerializedStyles;
+      bold16: SerializedStyles;
+      medium14: SerializedStyles;
+      bold12: SerializedStyles;
+      medium12: SerializedStyles;
     };
   }
 }
