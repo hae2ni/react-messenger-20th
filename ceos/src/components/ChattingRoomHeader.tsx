@@ -1,4 +1,4 @@
-import { Icon, rowFlex } from "style/commonStyle";
+import { ContentContainer, Icon, rowFlex } from "style/commonStyle";
 import styled from "styled-components";
 
 import MenuIC from "@/assets/icons/menu_ic.svg?react";
@@ -10,37 +10,30 @@ export default function ChattingRoomHeader() {
     <Wrapper>
       <ContentContainer>
         <LeftWrapper>
-          <Icon>
-            <ArrowIC />
-          </Icon>
+          <ArrowICon />
           <Text>이름</Text>
         </LeftWrapper>
 
         <RightWrapper>
-          <Icon>
-            <SearchIC />
-          </Icon>
-          <Icon>
-            <MenuIC />
-          </Icon>
+          <SearchICon />
+          <MenuIcon />
         </RightWrapper>
       </ContentContainer>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.div`
-  ${rowFlex}
-  width: 100%;
+const Wrapper = styled.header`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
   height: 64px;
 `;
 
-const ContentContainer = styled.div`
-  ${rowFlex};
-
-  justify-content: space-between;
-  width: 343px;
-`;
+const MenuIcon = Icon(MenuIC);
+const ArrowICon = Icon(ArrowIC);
+const SearchICon = Icon(SearchIC);
 
 const Text = styled.p`
   ${({ theme }) => theme.fonts.bold18};
@@ -53,5 +46,6 @@ const LeftWrapper = styled.div`
 
 const RightWrapper = styled.div`
   ${rowFlex}
-  gap: 20px;
+  justify-content: space-between;
+  width: 68px;
 `;
