@@ -1,3 +1,4 @@
+import { FunctionComponent, SVGProps } from "react";
 import styled, { css } from "styled-components";
 
 export const rowFlex = css`
@@ -12,8 +13,18 @@ export const columnFlex = css`
   flex-direction:column
 `;
 
-export const Icon = styled.button`
+type SVGComponent = FunctionComponent<SVGProps<SVGSVGElement>>;
+
+export const Icon = (Component: SVGComponent) => styled(Component)`
   cursor: pointer;
   width: 24px;
   height: 24px;
+`;
+
+export const ContentContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 343px;
 `;
