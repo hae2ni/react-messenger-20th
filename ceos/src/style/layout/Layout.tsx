@@ -1,5 +1,6 @@
 import PhoneHeader from "@components/PhoneHeader";
 import styled from "styled-components";
+import Light from "@assets/img/Light.png";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -10,6 +11,9 @@ export default function Layout({ children }: LayoutProps) {
     <MainContainer>
       <PhoneHeader />
       {children}
+      <footer>
+        <img src={Light} />
+      </footer>
     </MainContainer>
   );
 }
