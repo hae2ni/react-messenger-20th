@@ -3,13 +3,12 @@ import styled, { css } from "styled-components";
 
 export const rowFlex = css`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 `;
 
 export const columnFlex = css`
   ${rowFlex}
-
   flex-direction:column
 `;
 
@@ -23,8 +22,13 @@ export const Icon = (Component: SVGComponent) => styled(Component)`
 
 export const ContentContainer = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  justify-content: space-between;
   width: 343px;
+`;
+
+export const TextContainer = styled.div`
+  ${rowFlex};
+  border-radius: 16px;
+  ${({ theme }) => theme.fonts.medium16};
 `;
