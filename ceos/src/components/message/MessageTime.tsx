@@ -2,7 +2,11 @@ import styled from "styled-components";
 import { rowFlex } from "style/commonStyle";
 import { formattedTime } from "@utils/formattedTime";
 
-export default function MessageTime({ time }) {
+interface TimeProps {
+  time: string;
+}
+
+export default function MessageTime({ time }: TimeProps) {
   const formatTime = formattedTime(time);
 
   return <Text>{formatTime}</Text>;
