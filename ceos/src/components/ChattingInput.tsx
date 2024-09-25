@@ -10,6 +10,7 @@ export default function ChattingInput() {
     <Wrapper>
       <ContentContainer>
         <PlusIcon />
+        <Input autoFocus />
         <RightWrapper>
           <SmileICon />
           <HashtagICon />
@@ -34,3 +35,17 @@ const RightWrapper = styled.div`
 const PlusIcon = Icon(PlusIC);
 const SmileICon = Icon(SmileIC);
 const HashtagICon = Icon(HashtagIC);
+
+const Input = styled.input`
+  ${rowFlex}
+  width: 223px;
+  height: 32px;
+  border: none;
+  ${({ theme }) => theme.fonts.medium16};
+  color: ${({ theme }) => theme.colors.black};
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+`;
