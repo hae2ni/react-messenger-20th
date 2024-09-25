@@ -24,9 +24,7 @@ export default function ChattingRoomHeader() {
 }
 
 const Wrapper = styled.header`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${rowFlex}
   width: 100vw;
   height: 64px;
 `;
