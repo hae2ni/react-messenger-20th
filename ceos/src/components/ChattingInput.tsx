@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   ${rowFlex}
   width: 100%;
   height: 56px;
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const RightWrapper = styled.div`
