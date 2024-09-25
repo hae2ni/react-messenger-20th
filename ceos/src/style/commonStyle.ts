@@ -26,9 +26,3 @@ export const ContentContainer = styled.div`
   justify-content: space-between;
   width: 343px;
 `;
-
-export const TextContainer = styled.div`
-  ${rowFlex};
-  border-radius: 16px;
-  ${({ theme }) => theme.fonts.medium16};
-`;
