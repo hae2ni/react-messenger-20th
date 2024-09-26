@@ -13,7 +13,6 @@ export default function ChattingRoomHeader() {
 
   function handleChangeDummyText() {
     setDummyChat();
-    console.log(dummyChat);
   }
 
   return (
