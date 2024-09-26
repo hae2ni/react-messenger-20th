@@ -16,5 +16,5 @@ const Text = styled.p`
   ${rowFlex}
   ${({ theme }) => theme.fonts.medium12};
   color: ${({ theme }) => theme.colors.gray500};
-  padding-bottom: 10px;
+  margin-left: 6px;
 `;

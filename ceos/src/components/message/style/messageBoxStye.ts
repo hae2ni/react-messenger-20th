@@ -16,5 +16,5 @@ export const TextWrapper = styled.div`
   ${rowFlex}
   max-width: 185px;
   min-height: 39px;
-  padding: 10px;
+  margin-left: 8px;
 `;
