@@ -21,7 +21,7 @@ export default function ChatBubble() {
           );
         } else {
           return (
-            <ToWrapper>
+            <ToWrapper key={Math.random()}>
               <MessageBox id={id} text={message} />
             </ToWrapper>
           );
