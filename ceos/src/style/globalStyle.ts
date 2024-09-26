@@ -2,6 +2,9 @@ import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
 import { rowFlex } from "./commonStyle";
 
+import AppleSDGothicBold from "@assets/font/AppleSDGothicNeo-Bold.ttf";
+import AppleSDGothicMedium from "@assets/font/AppleSDGothicNeo-Medium.ttf";
+
 export const GlobalStyle = createGlobalStyle`
 ${reset}
 
@@ -40,10 +43,19 @@ button {
 
 html {
   @font-face {
-  font-family: 'Apple SD Gothic Neo';
+  font-family: 'Apple SD Gothic Bold';
   font-weight: normal;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo.css');
+  src: local('AppleSDGothicBold'), local('AppleSDGothicBold');
+  src: url(${AppleSDGothicBold}) format('truetype')
+  }
+
+  @font-face {
+    font-family:'Apple SD Gothic Medium';
+    font-weight: normal;
+  font-style: normal; ;
+    src: local('AppleSDGothicMedium'), local('AppleSDGothicMedium');
+    src: url(${AppleSDGothicMedium}) format('truetype');
   }
 
 }
