@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import ProfileImg from "@assets/profile/chatting_profile.svg?react";
-import { DUMMY_CHAT } from "constant/chat";
 import MessageBox from "./message/MessageBox";
 import FromBox from "./message/FromBox";
+import { useStore } from "@core/useStore";
 
 export default function ChatBubble() {
+  const newDummyText = useStore((state) => state.dummyText);
+
   return (
     <>
-      {DUMMY_CHAT.map((data) => {
+      {newDummyText.map((data) => {
         const { id, message, time } = data;
 
         if (id != "나") {
