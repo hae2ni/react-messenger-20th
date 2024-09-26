@@ -4,14 +4,16 @@ import styled from "styled-components";
 import MenuIC from "@/assets/icons/menu_ic.svg?react";
 import ArrowIC from "@/assets/icons/arrow_ic.svg?react";
 import SearchIC from "@/assets/icons/search_ic.svg?react";
+import { DUMMY_CHAT } from "constant/chat";
 
 export default function ChattingRoomHeader() {
+  const name = DUMMY_CHAT?.find((data) => data.id !== "나");
   return (
     <Wrapper>
       <ContentContainer>
         <LeftWrapper>
           <ArrowICon />
-          <Text>이름</Text>
+          <Text>{name?.id}</Text>
         </LeftWrapper>
 
         <RightWrapper>
