@@ -1,15 +1,31 @@
 import ChattingInput from "@components/ChattingInput";
 import ChattingList from "@components/ChattingList";
 import ChattingRoomHeader from "@components/ChattingRoomHeader";
+import { useStore } from "@core/useStore";
+import { useEffect, useRef } from "react";
 import Layout from "style/layout/Layout";
 import styled from "styled-components";
 
 export default function ChattingRoom() {
+  const newDummyText = useStore((state) => state.dummyText);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [newDummyText]);
+
+  function scrollToBottom() {
+    if (scrollRef.current) {
+      const { scrollHeight, clientHeight } = scrollRef.current;
+      scrollRef.current.scrollTop = scrollHeight - clientHeight;
+    }
+  }
+
   return (
     <Layout>
       <ChattingMain>
         <ChattingRoomHeader />
-        <ChattingList />
+        <ChattingList scrollRef={scrollRef} />
         <ChattingInput />
       </ChattingMain>
     </Layout>
