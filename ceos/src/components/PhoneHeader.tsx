@@ -5,8 +5,9 @@ import SignalIC from "@assets/statusBar/phsignal_ic.svg?react";
 import WifiIC from "@assets/statusBar/phwifi_ic.svg?react";
 import TimeIC from "@assets/statusBar/phTime.svg?react";
 import { rowFlex } from "style/commonStyle";
+import React from "react";
 
-export default function PhoneHeader() {
+function PhoneHeader() {
   return (
     <Wrapper>
       <ContentWrapper>
@@ -21,6 +22,8 @@ export default function PhoneHeader() {
     </Wrapper>
   );
 }
+
+export const MemoizedPhoneHeader = React.memo(PhoneHeader);
 
 const Wrapper = styled.div`
   ${rowFlex}

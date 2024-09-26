@@ -1,4 +1,4 @@
-import PhoneHeader from "@components/PhoneHeader";
+import { MemoizedPhoneHeader } from "@components/PhoneHeader";
 import styled from "styled-components";
 import Light from "@assets/img/Light.png";
 
@@ -9,7 +9,7 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <MainContainer>
-      <PhoneHeader />
+      <MemoizedPhoneHeader />
       {children}
       <footer>
         <img src={Light} />
