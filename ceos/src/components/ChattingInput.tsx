@@ -92,14 +92,18 @@ const InActiveIcon = IsActiveIcon(InActiveIc);
 
 const Form = styled.form`
   display: flex;
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const Input = styled.input`
   ${rowFlex}
   width: 223px;
   height: 32px;
+
   border: none;
+  background-color: ${({ theme }) => theme.colors.white};
   ${({ theme }) => theme.fonts.medium16};
+
   color: ${({ theme }) => theme.colors.black};
 
   &:focus {
