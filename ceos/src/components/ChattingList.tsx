@@ -10,5 +10,6 @@ export default function ChattingList() {
 }
 
 const Wrapper = styled.section`
-  overflow: scroll;
+  overflow-y: scroll;
+  width: 375px;
 `;

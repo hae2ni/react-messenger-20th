@@ -43,7 +43,7 @@ const Profile = styled(ProfileImg)`
 
 const FromContainer = styled.div`
   display: flex;
-  width: 100vw;
+  width: 100%;
   padding-left: 10px;
 `;
 
@@ -61,10 +61,11 @@ const FromWrapper = styled.div`
 const MessageTimeWrapper = styled.div`
   display: flex;
   align-items: flex-end;
+  padding-left: 10px;
 `;
 
 const ToWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 100vw;
+  width: 100%;
 `;
