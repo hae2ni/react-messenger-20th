@@ -11,13 +11,13 @@ import { useStore } from "@core/useStore";
 export default function ChattingInput() {
   const inputRef = useRef<HTMLInputElement>(null);
   const setInputText = useStore((state) => state.setInputValue);
-  const setDummyText = useStore((state) => state.setDummyText);
+  const addNewText = useStore((state) => state.addNewText);
 
   function handleText() {
     if (inputRef.current) {
       const enteredText = inputRef.current.value;
       setInputText(enteredText);
-      setDummyText();
+      addNewText();
       inputRef.current.value = "";
     }
   }
