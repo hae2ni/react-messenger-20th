@@ -4,10 +4,10 @@ import styled from "styled-components";
 import MenuIC from "@/assets/icons/menu_ic.svg?react";
 import ArrowIC from "@/assets/icons/arrow_ic.svg?react";
 import SearchIC from "@/assets/icons/search_ic.svg?react";
-import { DUMMY_CHAT } from "constant/chat";
+import { RED_CHAT } from "constant/chatRed";
 
 export default function ChattingRoomHeader() {
-  const name = DUMMY_CHAT?.find((data) => data.id !== "나");
+  const name = RED_CHAT?.find((data) => data.id !== "나");
   return (
     <Wrapper>
       <ContentContainer>

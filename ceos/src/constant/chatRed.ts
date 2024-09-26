@@ -1,6 +1,6 @@
-import { chatType } from "./chatType";
+import { chatType } from "types/chatType";
 
-export const DUMMY_CHAT: chatType[] = [
+export const RED_CHAT: chatType[] = [
   {
     id: "나",
     message: "안녕, 빨강아! 잘 지내?",
