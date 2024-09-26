@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import ProfileImg from "@assets/profile/chatting_profile.svg?react";
 import { DUMMY_CHAT } from "constant/chat";
-import MessageTime from "./message/MessageTime";
 import MessageBox from "./message/MessageBox";
+import FromBox from "./message/FromBox";
 
 export default function ChatBubble() {
   return (
@@ -12,15 +12,9 @@ export default function ChatBubble() {
 
         if (id != "나") {
           return (
-            <FromContainer>
+            <FromContainer key={Math.random()}>
               <Profile />
-              <FromWrapper>
-                <Name>{id}</Name>
-                <MessageTimeWrapper>
-                  <MessageBox id={id} text={message} />
-                  <MessageTime time={time} />
-                </MessageTimeWrapper>
-              </FromWrapper>
+              <FromBox id={id} message={message} time={time} />
             </FromContainer>
           );
         } else {
@@ -51,17 +45,6 @@ const Name = styled.p`
   padding-left: 10px;
 
   ${({ theme }) => theme.fonts.medium12};
-`;
-
-const FromWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const MessageTimeWrapper = styled.div`
-  display: flex;
-  align-items: flex-end;
-  padding-left: 10px;
 `;
 
 const ToWrapper = styled.div`
