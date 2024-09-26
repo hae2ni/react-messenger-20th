@@ -27,7 +27,6 @@ export default function ChatBubble() {
           );
         }
       })}
-      <Name />
     </>
   );
 }
@@ -41,12 +40,6 @@ const FromContainer = styled.div`
   display: flex;
   width: 100%;
   padding-left: 10px;
-`;
-
-const Name = styled.p`
-  padding-left: 10px;
-
-  ${({ theme }) => theme.fonts.medium12};
 `;
 
 const ToWrapper = styled.div`
