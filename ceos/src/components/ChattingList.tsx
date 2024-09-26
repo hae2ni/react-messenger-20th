@@ -12,4 +12,8 @@ export default function ChattingList() {
 const Wrapper = styled.section`
   overflow-y: scroll;
   width: 375px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
