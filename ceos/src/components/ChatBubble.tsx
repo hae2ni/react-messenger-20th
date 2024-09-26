@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import ProfileImg from "@assets/profile/chatting_profile.svg?react";
-import MessageBox from "./message/MessageBox";
 import FromBox from "./message/FromBox";
 import { useStore } from "@core/useStore";
+import ToBox from "./message/ToBox";
 
 export default function ChatBubble() {
   const newDummyText = useStore((state) => state.dummyText);
@@ -22,7 +22,7 @@ export default function ChatBubble() {
         } else {
           return (
             <ToWrapper key={Math.random()}>
-              <MessageBox id={id} text={message} />
+              <ToBox id={id} message={message} time={time} />
             </ToWrapper>
           );
         }
