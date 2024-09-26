@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import MessageBox from "./MessageBox";
-import { chatType } from "types/chatType";
 import MessageTime from "./MessageTime";
+import ToMessageBox from "./ToMessageBox";
+import { BoxProps } from "./types/messageBoxProps";
 
-export default function ToBox({ id, message, time }: chatType) {
+export default function ToBox({ showProfile, message, time }: BoxProps) {
   return (
     <Wrapper>
       <MessageTime time={time} />
-      <MessageBox id={id} text={message} />
+      <ToMessageBox showProfile={showProfile} message={message} />
     </Wrapper>
   );
 }
