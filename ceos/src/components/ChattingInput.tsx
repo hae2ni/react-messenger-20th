@@ -1,25 +1,30 @@
-import { ContentContainer, Icon, rowFlex } from "style/commonStyle";
+import { ContentContainer, Icon, rowFlex, IsActiveIcon } from "style/commonStyle";
 import styled from "styled-components";
 
 import PlusIC from "@/assets/icons/plus_ic.svg?react";
 import SmileIC from "@/assets/icons/smile_ic.svg?react";
 import HashtagIC from "@/assets/icons/hashtag_ic.svg?react";
 
-import { useRef } from "react";
+import ActiveIc from "@/assets/icons/active_ic.svg?react";
+import InActiveIc from "@/assets/icons/inactive_ic.svg?react";
+
+import { useState } from "react";
 import { useStore } from "@core/useStore";
 
 export default function ChattingInput() {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [inputValue, setInputValue] = useState("");
+  const [isFocus, setIsFocus] = useState(false);
+
   const setInputText = useStore((state) => state.setInputValue);
   const addNewText = useStore((state) => state.addNewText);
 
   function handleText() {
-    if (inputRef.current) {
-      const enteredText = inputRef.current.value;
-      setInputText(enteredText);
+    if (inputValue.trim()) {
+      setInputText(inputValue);
       addNewText();
-      inputRef.current.value = "";
+      setInputValue("");
     }
+    setIsFocus(false);
   }
 
   function handlePressEnter(e: React.KeyboardEvent<HTMLInputElement>) {
@@ -34,15 +39,31 @@ export default function ChattingInput() {
     handleText();
   }
 
+  function handleFocus() {
+    setIsFocus(true);
+  }
+
   return (
     <Wrapper>
       <ContentContainer>
         <PlusIcon />
         <Form onSubmit={handleSubmit}>
-          <Input onKeyDown={handlePressEnter} type="text" ref={inputRef} autoFocus={true} />
+          <Input
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onFocus={handleFocus}
+            onKeyDown={handlePressEnter}
+            type="text"
+          />
           <RightWrapper>
             <SmileICon />
-            <HashtagICon onClick={handleText} />
+            {!isFocus ? (
+              <HashtagICon />
+            ) : inputValue?.length !== 0 ? (
+              <ActiveIcon onClick={handleText} />
+            ) : (
+              <InActiveIcon />
+            )}
           </RightWrapper>
         </Form>
       </ContentContainer>
@@ -65,6 +86,9 @@ const RightWrapper = styled.div`
 const PlusIcon = Icon(PlusIC);
 const SmileICon = Icon(SmileIC);
 const HashtagICon = Icon(HashtagIC);
+
+const ActiveIcon = IsActiveIcon(ActiveIc);
+const InActiveIcon = IsActiveIcon(InActiveIc);
 
 const Form = styled.form`
   display: flex;
