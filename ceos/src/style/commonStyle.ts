@@ -26,3 +26,9 @@ export const ContentContainer = styled.div`
   justify-content: space-between;
   width: 343px;
 `;
+
+export const IsActiveIcon = (Component: SVGComponent) => styled(Component)`
+  cursor: pointer;
+  width: 48px;
+  height: 32px;
+`;
