@@ -43,6 +43,7 @@ const ArrowICon = Icon(ArrowIC);
 const SearchICon = Icon(SearchIC);
 
 const Text = styled.p`
+  cursor: pointer;
   ${({ theme }) => theme.fonts.bold18};
 `;
 
