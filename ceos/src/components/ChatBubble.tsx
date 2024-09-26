@@ -9,20 +9,39 @@ export default function ChatBubble() {
 
   return (
     <>
-      {newDummyText.map((data) => {
+      {newDummyText.map((data, index, array) => {
         const { id, message, time } = data;
+
+        const prevMessage = array[index - 1];
+        const nextMessage = array[index + 1];
+
+        //다음 메세지랑 동시에 엔터엔터,,,를 했냐마냐
+        const isSameTime = nextMessage?.id === id && nextMessage?.time === time;
+
+        //받은 메세지고, 전에랑 time이 달라짐!
+        const showProfile = index === 0 || prevMessage?.id !== id || prevMessage?.time !== time;
+
+        //id가 같고, time이 앞에 메세지랑 같지만, 그 시간에 그 사람이 마지막으로 보낸 메세지임
+        const lastMessage = prevMessage?.id === id && prevMessage?.time === time && nextMessage?.time != time;
 
         if (id != "나") {
           return (
             <FromContainer key={Math.random()}>
-              <Profile />
-              <FromBox id={id} message={message} time={time} />
+              {showProfile && <Profile />}
+              <FromBox
+                lastMessage={lastMessage}
+                isSameTime={isSameTime}
+                showProfile={showProfile}
+                id={id}
+                message={message}
+                time={time}
+              />
             </FromContainer>
           );
         } else {
           return (
             <ToWrapper key={Math.random()}>
-              <ToBox id={id} message={message} time={time} />
+              <ToBox showProfile={showProfile} message={message} time={time} />
             </ToWrapper>
           );
         }
