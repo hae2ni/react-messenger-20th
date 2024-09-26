@@ -4,16 +4,24 @@ import styled from "styled-components";
 import MenuIC from "@/assets/icons/menu_ic.svg?react";
 import ArrowIC from "@/assets/icons/arrow_ic.svg?react";
 import SearchIC from "@/assets/icons/search_ic.svg?react";
-import { RED_CHAT } from "constant/chatRed";
+import { useStore } from "@core/useStore";
 
 export default function ChattingRoomHeader() {
-  const name = RED_CHAT?.find((data) => data.id !== "나");
+  const dummyChat = useStore((state) => state.dummyText);
+  const setDummyChat = useStore((state) => state.setDummyText);
+  const name = dummyChat?.find((data) => data.id !== "나");
+
+  function handleChangeDummyText() {
+    setDummyChat();
+    console.log(dummyChat);
+  }
+
   return (
     <Wrapper>
       <ContentContainer>
         <LeftWrapper>
           <ArrowICon />
-          <Text>{name?.id}</Text>
+          <Text onClick={handleChangeDummyText}>{name?.id}</Text>
         </LeftWrapper>
 
         <RightWrapper>
