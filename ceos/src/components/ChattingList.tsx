@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import ChatBubble from "./ChatBubble";
+import { RefObject } from "react";
 
-export default function ChattingList() {
+interface ChattingListPropTypes {
+  scrollRef: RefObject<HTMLDivElement>;
+}
+
+export default function ChattingList({ scrollRef }: ChattingListPropTypes) {
   return (
-    <Wrapper>
+    <Wrapper ref={scrollRef}>
       <ChatBubble />
     </Wrapper>
   );
