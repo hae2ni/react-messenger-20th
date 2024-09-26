@@ -12,5 +12,5 @@ export default function ToMessageBox({ showProfile, message }: MessageBoxProps) 
 
 const MessageText = styled(MessageBoxStyle)<{ $showProfile: boolean }>`
   background-color: ${({ theme }) => theme.colors.primary};
-  border-top-right-radius: ${({ $showProfile }) => ($showProfile ? "16px" : 0)};
+  border-top-right-radius: ${({ $showProfile }) => ($showProfile ? 0 : "16px")};
 `;
