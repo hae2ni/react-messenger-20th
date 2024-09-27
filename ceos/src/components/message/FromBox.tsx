@@ -27,6 +27,7 @@ export default function FromBox(props: FromBoxPropType) {
 
 const Name = styled.p`
   padding-left: 10px;
+  margin-top: 12px;
   margin-bottom: 4px;
   ${({ theme }) => theme.fonts.medium12};
 `;
