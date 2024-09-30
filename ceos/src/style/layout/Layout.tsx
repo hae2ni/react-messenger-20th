@@ -1,6 +1,7 @@
 import { MemoizedPhoneHeader } from "@components/PhoneHeader";
 import styled from "styled-components";
 import HomeBar from "@assets/img/HomeBar.png";
+import { isMobile } from "react-device-detect";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -9,11 +10,13 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <MainContainer>
-      <MemoizedPhoneHeader />
+      {!isMobile && <MemoizedPhoneHeader />}
       {children}
-      <footer>
-        <img src={HomeBar} alt="HomeBar" />
-      </footer>
+      {!isMobile && (
+        <footer>
+          <HomeBarImg src={HomeBar} alt="HomeBar" />
+        </footer>
+      )}
     </MainContainer>
   );
 }
@@ -31,4 +34,8 @@ const MainContainer = styled.main`
 
   background-color: ${({ theme }) => theme.colors.profile2};
   border: none;
+`;
+
+const HomeBarImg = styled.img`
+  display: flex;
 `;
