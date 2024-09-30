@@ -15,4 +15,5 @@ export default function ToBox({ showProfile, message, time }: BoxProps) {
 const Wrapper = styled.div`
   display: flex;
   align-items: flex-end;
+  margin-bottom: 8px;
 `;
