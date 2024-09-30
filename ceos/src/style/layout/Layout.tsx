@@ -1,6 +1,6 @@
 import { MemoizedPhoneHeader } from "@components/PhoneHeader";
 import styled from "styled-components";
-import Light from "@assets/img/Light.png";
+import HomeBar from "@assets/img/HomeBar.png";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
       <MemoizedPhoneHeader />
       {children}
       <footer>
-        <img src={Light} />
+        <img src={HomeBar} alt="HomeBar" />
       </footer>
     </MainContainer>
   );
