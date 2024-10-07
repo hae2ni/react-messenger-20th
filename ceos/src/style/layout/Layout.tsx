@@ -2,16 +2,13 @@ import { MemoizedPhoneHeader } from "@components/PhoneHeader";
 import styled from "styled-components";
 import HomeBar from "@assets/img/HomeBar.png";
 import { isMobile } from "react-device-detect";
+import { Outlet } from "react-router";
 
-type LayoutProps = {
-  children: React.ReactNode;
-};
-
-export default function Layout({ children }: LayoutProps) {
+export default function Layout() {
   return (
     <MainContainer>
       {!isMobile && <MemoizedPhoneHeader />}
-      {children}
+      <Outlet />
       {!isMobile && (
         <footer>
           <HomeBarImg src={HomeBar} alt="HomeBar" />
