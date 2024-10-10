@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import UpIc from "@assets/icons/up_ic.svg?react";
-import DowwnIc from "@assets/icons/down_ic.svg?reacct";
+import DowwnIc from "@assets/icons/down_ic.svg?react";
 import { Icon } from "style/commonStyle";
 
 export default function Favorites() {
