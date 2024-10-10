@@ -3,7 +3,6 @@ import ChattingList from "@components/ChattingList";
 import ChattingRoomHeader from "@components/ChattingRoomHeader";
 import { useStore } from "@core/useStore";
 import { useEffect, useRef } from "react";
-import Layout from "style/layout/Layout";
 import styled from "styled-components";
 
 export default function ChattingRoom() {
@@ -22,13 +21,11 @@ export default function ChattingRoom() {
   }
 
   return (
-    <Layout>
-      <ChattingMain>
-        <ChattingRoomHeader />
-        <ChattingList scrollRef={scrollRef} />
-        <ChattingInput />
-      </ChattingMain>
-    </Layout>
+    <ChattingMain>
+      <ChattingRoomHeader />
+      <ChattingList scrollRef={scrollRef} />
+      <ChattingInput />
+    </ChattingMain>
   );
 }
 
