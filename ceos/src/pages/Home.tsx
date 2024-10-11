@@ -1,7 +1,7 @@
 import Favorites from "@components/friendList/Favorites";
+import FriendList from "@components/friendList/FriendList";
 import Header from "@components/friendList/Header";
 import MyProfile from "@components/friendList/MyProfile";
-import NavigateBar from "@components/friendList/NavigateBar";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
       <MyProfile />
       <Favorites />
-      <NavigateBar />
+      <FriendList />
     </>
   );
 }
