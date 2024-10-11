@@ -2,15 +2,24 @@ import { MemoizedPhoneHeader } from "@components/PhoneHeader";
 import styled from "styled-components";
 import HomeBar from "@assets/img/HomeBar.png";
 import { isMobile } from "react-device-detect";
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
+import NavigateBar from "@components/friendList/NavigateBar";
+import { useEffect } from "react";
 
 export default function Layout() {
+  const location = useLocation();
+  const pathname = location.pathname;
+  useEffect(() => {
+    console.log(pathname);
+  }, [location]);
+
   return (
     <Container>
       {!isMobile && <MemoizedPhoneHeader />}
       <Content>
         <Outlet />
       </Content>
+      {pathname !== "/chattingRoomId" && <NavigateBar />}
       {!isMobile && (
         <footer>
           <HomeBarImg src={HomeBar} alt="HomeBar" />
