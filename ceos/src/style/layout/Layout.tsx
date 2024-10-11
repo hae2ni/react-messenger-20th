@@ -31,7 +31,6 @@ const Container = styled.main`
   margin-right: auto;
   margin-left: auto;
 
-  background-color: ${({ theme }) => theme.colors.profile2};
   border: none;
 `;
 
