@@ -8,11 +8,13 @@ export const rowFlex = css`
 `;
 
 export const columnFlex = css`
-  ${rowFlex}
-  flex-direction:column
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
-type SVGComponent = FunctionComponent<SVGProps<SVGSVGElement>>;
+export type SVGComponent = FunctionComponent<SVGProps<SVGSVGElement>>;
 
 export const Icon = (Component: SVGComponent) => styled(Component)`
   cursor: pointer;
