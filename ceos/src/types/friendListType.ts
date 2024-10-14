@@ -1,6 +1,7 @@
 export interface friendListType {
-  id: string;
+  userId: string;
   user: string;
   statusMessage: string;
   profile: string;
+  isFavorite?: boolean;
 }
