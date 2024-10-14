@@ -1,9 +1,9 @@
-import { MemoizedPhoneHeader } from "@components/PhoneHeader";
+import { MemoizedPhoneHeader } from "@components/common/PhoneHeader";
 import styled from "styled-components";
 import HomeBar from "@assets/img/HomeBar.png";
 import { isMobile } from "react-device-detect";
 import { Outlet, useLocation } from "react-router";
-import NavigateBar from "@components/friendList/NavigateBar";
+import NavigateBar from "@components/common/NavigateBar";
 
 export default function Layout() {
   const location = useLocation();
