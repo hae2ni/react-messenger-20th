@@ -4,14 +4,10 @@ import HomeBar from "@assets/img/HomeBar.png";
 import { isMobile } from "react-device-detect";
 import { Outlet, useLocation } from "react-router";
 import NavigateBar from "@components/friendList/NavigateBar";
-import { useEffect } from "react";
 
 export default function Layout() {
   const location = useLocation();
   const pathname = location.pathname;
-  useEffect(() => {
-    console.log(pathname);
-  }, [location]);
 
   return (
     <Container>
@@ -19,7 +15,7 @@ export default function Layout() {
       <Content>
         <Outlet />
       </Content>
-      {pathname !== "/chattingRoomId" && <NavigateBar />}
+      {!pathname.includes("/message") && <NavigateBar />}
       {!isMobile && (
         <footer>
           <HomeBarImg src={HomeBar} alt="HomeBar" />
