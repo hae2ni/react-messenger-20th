@@ -1,7 +1,7 @@
+import { ProfileImg } from "@components/common/ProfileImg";
 import styled from "styled-components";
 import { friendListType } from "types/friendListType";
 
-type ImgProps = Pick<friendListType, "profile">;
 type FriendProfileProps = Omit<friendListType, "id">;
 
 export default function FriendProfile(props: FriendProfileProps) {
@@ -22,15 +22,6 @@ const Wrapper = styled.li`
   gap: 12px;
   align-items: center;
   width: 343px;
-`;
-
-const ProfileImg = styled.img.attrs<ImgProps>((props) => ({
-  src: props.profile,
-  alt: "profileImg",
-}))`
-  width: 48px;
-  height: 48px;
-  border-radius: 20px;
 `;
 
 const TextWrapper = styled.div`
