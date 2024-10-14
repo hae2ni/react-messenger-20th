@@ -4,23 +4,27 @@ import styled from "styled-components";
 import MenuIC from "@/assets/icons/menu_ic.svg?react";
 import ArrowIC from "@/assets/icons/arrow_ic.svg?react";
 import SearchIC from "@/assets/icons/search_ic.svg?react";
-import { useStore } from "@core/useStore";
+import { useNavigate } from "react-router";
+import { FRIEND_LIST } from "constant/friends";
+import { UserIdType } from "types/userIdType";
 
-export default function ChattingRoomHeader() {
-  const dummyChat = useStore((state) => state.dummyText);
-  const setDummyChat = useStore((state) => state.setDummyText);
-  const name = dummyChat?.find((data) => data.id !== "나");
+export default function ChattingRoomHeader({ userId }: UserIdType) {
+  const friendIndex = FRIEND_LIST.findIndex((friend) => friend.userId === userId);
+  const friendName = friendIndex !== -1 && FRIEND_LIST[friendIndex].user;
+  console.log(typeof userId);
 
-  function handleChangeDummyText() {
-    setDummyChat();
+  const navigate = useNavigate();
+
+  function handleGoBackButton() {
+    navigate(-1);
   }
 
   return (
     <Wrapper>
       <ContentContainer>
         <LeftWrapper>
-          <ArrowICon />
-          <Text onClick={handleChangeDummyText}>{name?.id}</Text>
+          <ArrowICon onClick={handleGoBackButton} />
+          <Text>{friendName}</Text>
         </LeftWrapper>
 
         <RightWrapper>
