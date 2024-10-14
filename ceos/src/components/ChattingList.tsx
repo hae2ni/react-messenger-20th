@@ -4,12 +4,13 @@ import { RefObject } from "react";
 
 interface ChattingListPropTypes {
   scrollRef: RefObject<HTMLDivElement>;
+  userId: string | undefined;
 }
 
-export default function ChattingList({ scrollRef }: ChattingListPropTypes) {
+export default function ChattingList({ scrollRef, userId }: ChattingListPropTypes) {
   return (
     <Wrapper ref={scrollRef}>
-      <ChatBubble />
+      <ChatBubble userId={userId} />
     </Wrapper>
   );
 }
