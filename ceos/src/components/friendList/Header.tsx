@@ -4,11 +4,20 @@ import SearchIc from "@assets/icons/search_ic.svg?react";
 import UserIc from "@assets/icons/user_ic.svg?react";
 
 import { Icon, rowFlex } from "style/commonStyle";
+import { useLocation } from "react-router";
+import { useEffect } from "react";
 
 export default function Header() {
+  const location = useLocation();
+  const pathname = location.pathname;
+
+  useEffect(() => {
+    console.log(pathname);
+  }, [location]);
+
   return (
     <Wrapper>
-      <HeaderText>친구</HeaderText>
+      <HeaderText>{pathname === "/chattinglist" ? "채팅" : "친구"}</HeaderText>
       <IconWrapper>
         <SearchIcon />
         <UserIcon />
