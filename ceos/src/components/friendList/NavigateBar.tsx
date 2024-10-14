@@ -1,25 +1,26 @@
-import { columnFlex, Icon, rowFlex } from "style/commonStyle";
+import { Icon, rowFlex } from "style/commonStyle";
 import styled from "styled-components";
 
 import UserIc from "@assets/icons/user_default_ic.svg?react";
 import MoreIc from "@assets/icons/more_ic.svg?react";
 import ChatIc from "@assets/icons/chat_ic.svg?react";
+import { Link } from "react-router-dom";
 
 export default function NavigateBar() {
   return (
     <Wrapper>
-      <BottonWrapper>
+      <BottonWrapper to="/">
         <UserIcon />
         <NavText>친구</NavText>
       </BottonWrapper>
-      <BottonWrapper>
+      <BottonWrapper to="/chattinglist">
         <ChatIcon />
         <NavText>채팅</NavText>
       </BottonWrapper>
-      <BottonWrapper>
+      <DisabledButton>
         <MoreIcon />
         <NavText>더보기</NavText>
-      </BottonWrapper>
+      </DisabledButton>
     </Wrapper>
   );
 }
@@ -28,15 +29,25 @@ const Wrapper = styled.nav`
   ${rowFlex}
   justify-content: space-between;
   height: 64px;
+  margin: 0 16px;
 `;
 
-const BottonWrapper = styled.button`
+const DisabledButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+`;
+
+const BottonWrapper = styled(Link)`
   cursor: pointer;
 
   display: flex;
   flex-direction: column;
   gap: 4px;
   align-items: center;
+
+  text-decoration: none;
 `;
 
 const NavText = styled.p`
