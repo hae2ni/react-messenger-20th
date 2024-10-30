@@ -59,8 +59,8 @@ const Text = styled.p`
   color: ${({ theme }) => theme.colors.gray500};
 `;
 
-const Stroke = styled.div`
+const Stroke = styled.hr`
+  size: 0.8px;
   width: 343px;
-  border-bottom: solid;
-  border-bottom-color: ${({ theme }) => theme.colors.gray500};
+  color: ${({ theme }) => theme.colors.gray200};
 `;
