@@ -3,7 +3,14 @@ import { formattedTime } from "@utils/formattedTime";
 import { FRIEND_LIST } from "constant/friends";
 import styled from "styled-components";
 
-export default function OneChat(props) {
+interface OneChatProps {
+  lastText: string;
+  lastTime: string;
+  user: string;
+  userId: string;
+}
+
+export default function OneChat(props: OneChatProps) {
   const { lastText, lastTime, user, userId } = props;
   const formatTime = formattedTime(lastTime);
 

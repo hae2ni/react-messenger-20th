@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useStore } from "@core/useStore";
-import { CHAT_DATA } from "constant/chatData";
 import { chatType } from "types/chatType";
 import OneChat from "./OneChat";
+import { Link } from "react-router-dom";
 
 export default function List() {
   const newDummyText = useStore((state) => state.dummyText);
@@ -27,9 +27,9 @@ export default function List() {
         const { lastText, lastTime, user, userId } = message;
 
         return (
-          <>
+          <Link to={`/message/${userId}`}>
             <OneChat key={userId} lastText={lastText} lastTime={lastTime} user={user} userId={userId} />
-          </>
+          </Link>
         );
       })}
     </Container>
