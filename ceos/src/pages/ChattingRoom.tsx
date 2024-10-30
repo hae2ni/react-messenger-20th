@@ -3,10 +3,13 @@ import ChattingList from "@components/ChattingList";
 import ChattingRoomHeader from "@components/ChattingRoomHeader";
 import { useStore } from "@core/useStore";
 import { useEffect, useRef } from "react";
+import { useParams } from "react-router";
 import styled from "styled-components";
 
 export default function ChattingRoom() {
   const newDummyText = useStore((state) => state.dummyText);
+  const { userId } = useParams();
+
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -22,8 +25,8 @@ export default function ChattingRoom() {
 
   return (
     <ChattingMain>
-      <ChattingRoomHeader />
-      <ChattingList scrollRef={scrollRef} />
+      <ChattingRoomHeader userId={userId} />
+      <ChattingList userId={userId} scrollRef={scrollRef} />
       <ChattingInput />
     </ChattingMain>
   );
