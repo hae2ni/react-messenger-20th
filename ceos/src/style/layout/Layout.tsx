@@ -8,14 +8,16 @@ import NavigateBar from "@components/common/NavigateBar";
 export default function Layout() {
   const location = useLocation();
   const pathname = location.pathname;
+  const isMessageRoom = pathname.includes("/message");
 
   return (
-    <Container>
+    <Container $isMessageRoom={isMessageRoom}>
       {!isMobile && <MemoizedPhoneHeader />}
       <Content>
         <Outlet />
       </Content>
-      {!pathname.includes("/message") && <NavigateBar />}
+
+      {!isMessageRoom && <NavigateBar />}
       {!isMobile && (
         <footer>
           <HomeBarImg src={HomeBar} alt="HomeBar" />
@@ -24,8 +26,11 @@ export default function Layout() {
     </Container>
   );
 }
+interface ContainerProps {
+  $isMessageRoom: boolean;
+}
 
-const Container = styled.main`
+const Container = styled.main<ContainerProps>`
   position: relative;
 
   display: flex;
@@ -36,12 +41,12 @@ const Container = styled.main`
   margin-right: auto;
   margin-left: auto;
 
+  background-color: ${(props) => (props.$isMessageRoom ? props.theme.colors.profile2 : props.theme.colors.white)};
   border: none;
 `;
 
 const Content = styled.div`
   height: 730px;
-  margin: 0 16px;
 `;
 
 const HomeBarImg = styled.img`
