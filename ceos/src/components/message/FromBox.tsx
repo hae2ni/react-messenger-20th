@@ -7,15 +7,17 @@ interface FromBoxPropType extends chatType {
   showProfile: boolean;
   isSameTime: boolean;
   lastMessage: boolean;
+  message: string;
+  time: string;
 }
 
 export default function FromBox(props: FromBoxPropType) {
-  const { id, message, time, showProfile, isSameTime, lastMessage } = props;
+  const { user, message, time, showProfile, isSameTime, lastMessage } = props;
 
   return (
     <>
       <FromWrapper>
-        {showProfile && <Name>{id}</Name>}
+        {showProfile && <Name>{user}</Name>}
         <MessageTimeWrapper $showProfile={showProfile}>
           <FromMessageBox showProfile={showProfile} message={message} />
           {!isSameTime || lastMessage ? <MessageTime time={time} /> : null}
