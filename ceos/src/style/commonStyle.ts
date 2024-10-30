@@ -22,6 +22,12 @@ export const Icon = (Component: SVGComponent) => styled(Component)`
   height: 24px;
 `;
 
+export const SmallIcon = (Component: SVGComponent) => styled(Component)`
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+`;
+
 export const ContentContainer = styled.div`
   display: flex;
   align-items: center;
