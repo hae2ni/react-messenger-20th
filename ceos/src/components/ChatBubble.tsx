@@ -1,15 +1,18 @@
 import styled from "styled-components";
-import ProfileImg from "@assets/profile/chatting_profile.svg?react";
 import FromBox from "./message/FromBox";
 import { useStore } from "@core/useStore";
 import ToBox from "./message/ToBox";
+import { FRIEND_LIST } from "constant/friends";
 
 export default function ChatBubble({ userId }) {
   const newDummyText = useStore((state) => state.dummyText);
 
   const friendData = newDummyText.find((friend) => friend.userId === userId);
+  const friendProfile = FRIEND_LIST.find((friend) => friend.userId === userId)?.profile;
+  console.log(friendProfile);
+
   if (!friendData) {
-    return console.log("no..");
+    return <p>친구가 없는데요?</p>;
   }
 
   return (
@@ -32,7 +35,7 @@ export default function ChatBubble({ userId }) {
         if (sender != "me") {
           return (
             <FromContainer key={Math.random()}>
-              {showProfile && <Profile />}
+              {showProfile && <Profile $profileImg={friendProfile} />}
               <FromBox
                 lastMessage={lastMessage}
                 isSameTime={isSameTime}
@@ -55,9 +58,17 @@ export default function ChatBubble({ userId }) {
   );
 }
 
-const Profile = styled(ProfileImg)`
+interface ProfileImgProps {
+  $profileImg: string;
+}
+
+const Profile = styled.img.attrs<ProfileImgProps>((props) => ({
+  src: props.$profileImg,
+  alt: "친귀사진",
+}))`
   width: 48px;
   height: 48px;
+  border-radius: 16px;
 `;
 
 const FromContainer = styled.div`
