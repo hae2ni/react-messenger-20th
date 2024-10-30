@@ -3,6 +3,7 @@ import FromBox from "./message/FromBox";
 import { useStore } from "@core/useStore";
 import ToBox from "./message/ToBox";
 import { FRIEND_LIST } from "constant/friends";
+import { ProfileImg } from "./common/ProfileImg";
 
 export default function ChatBubble({ userId }) {
   const newDummyText = useStore((state) => state.dummyText);
@@ -35,7 +36,7 @@ export default function ChatBubble({ userId }) {
         if (sender != "me") {
           return (
             <FromContainer key={Math.random()}>
-              {showProfile && <Profile $profileImg={friendProfile} />}
+              {showProfile && <ProfileImg profile={friendProfile} />}
               <FromBox
                 lastMessage={lastMessage}
                 isSameTime={isSameTime}
@@ -57,19 +58,6 @@ export default function ChatBubble({ userId }) {
     </>
   );
 }
-
-interface ProfileImgProps {
-  $profileImg: string;
-}
-
-const Profile = styled.img.attrs<ProfileImgProps>((props) => ({
-  src: props.$profileImg,
-  alt: "친귀사진",
-}))`
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
-`;
 
 const FromContainer = styled.div`
   display: flex;
