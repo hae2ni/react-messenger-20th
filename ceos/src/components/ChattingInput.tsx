@@ -10,18 +10,20 @@ import InActiveIc from "@/assets/icons/inactive_ic.svg?react";
 
 import { useState } from "react";
 import { useStore } from "@core/useStore";
+import { useParams } from "react-router";
 
 export default function ChattingInput() {
   const [inputValue, setInputValue] = useState("");
   const [isFocus, setIsFocus] = useState(false);
 
+  const { userId } = useParams();
   const setInputText = useStore((state) => state.setInputValue);
   const addNewText = useStore((state) => state.addNewText);
 
   function handleText() {
     if (inputValue.trim()) {
       setInputText(inputValue);
-      addNewText();
+      addNewText(userId);
       setInputValue("");
     }
     setIsFocus(false);
