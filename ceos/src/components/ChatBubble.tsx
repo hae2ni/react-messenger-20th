@@ -11,7 +11,7 @@ export default function ChatBubble({ userId }) {
   if (!friendData) {
     return console.log("no..");
   }
-  console.log(friendData.messages);
+
   return (
     <>
       {friendData.messages.map((data, index, array) => {
@@ -56,21 +56,18 @@ export default function ChatBubble({ userId }) {
 }
 
 const Profile = styled(ProfileImg)`
+  width: 48px;
   height: 48px;
-
-  wuserth: 48px;
 `;
 
 const FromContainer = styled.div`
   display: flex;
+  width: 100%;
   padding-left: 10px;
-
-  wuserth: 100%;
 `;
 
 const ToWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-
-  wuserth: 100%;
+  width: 100%;
 `;
