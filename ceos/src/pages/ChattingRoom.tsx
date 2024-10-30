@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 export default function ChattingRoom() {
   const newDummyText = useStore((state) => state.dummyText);
-  const { userId } = useParams();
+  const { userId } = useParams<{ userId: string }>();
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
@@ -21,6 +21,10 @@ export default function ChattingRoom() {
       const { scrollHeight, clientHeight } = scrollRef.current;
       scrollRef.current.scrollTop = scrollHeight - clientHeight;
     }
+  }
+
+  if (!userId) {
+    return <p>유효하지 않습니다.</p>;
   }
 
   return (
