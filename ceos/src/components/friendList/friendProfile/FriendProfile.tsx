@@ -2,7 +2,7 @@ import { ProfileImg } from "@components/common/ProfileImg";
 import styled from "styled-components";
 import { friendListType } from "types/friendListType";
 
-type FriendProfileProps = Omit<friendListType, "id">;
+type FriendProfileProps = Omit<friendListType, "id" | "userId">;
 
 export default function FriendProfile(props: FriendProfileProps) {
   const { user, statusMessage, profile } = props;

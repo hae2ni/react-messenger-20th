@@ -1,14 +1,19 @@
 import { FRIEND_LIST } from "constant/friends";
 import styled from "styled-components";
 import FriendProfile from "./friendProfile/FriendProfile";
+import { Link } from "react-router-dom";
 
 export default function FriendList() {
   return (
     <Wrapper>
       {FRIEND_LIST.map((friend) => {
-        const { id, user, statusMessage, profile } = friend;
+        const { userId, user, statusMessage, profile } = friend;
 
-        return <FriendProfile key={id} user={user} statusMessage={statusMessage} profile={profile} />;
+        return (
+          <Link to={`/message/${userId}`}>
+            <FriendProfile key={userId} user={user} statusMessage={statusMessage} profile={profile} />
+          </Link>
+        );
       })}
     </Wrapper>
   );
