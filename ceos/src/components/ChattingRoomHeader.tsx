@@ -11,7 +11,6 @@ import { UserIdType } from "types/userIdType";
 export default function ChattingRoomHeader({ userId }: UserIdType) {
   const friendIndex = FRIEND_LIST.findIndex((friend) => friend.userId === userId);
   const friendName = friendIndex !== -1 && FRIEND_LIST[friendIndex].user;
-  console.log(typeof userId);
 
   const navigate = useNavigate();
 
