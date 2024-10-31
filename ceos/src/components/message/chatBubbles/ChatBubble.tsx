@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import FromBox from "./FromBox";
 import { useStore } from "@core/useStore";
-import ToBox from "../ToBox";
+import ToBox from "./ToBox";
 import { FRIEND_LIST } from "constant/friends";
 import { ProfileImg } from "../../common/ProfileImg";
 import NewChat from "../../common/NewChat";
@@ -15,7 +15,6 @@ export default function ChatBubble({ userId }: ChatBubbleProps) {
 
   const friendData = newDummyText.find((friend) => friend.userId === userId);
   const friendProfile = FRIEND_LIST.find((friend) => friend.userId === userId)?.profile;
-  console.log(friendProfile);
 
   if (!friendData) {
     return (
@@ -34,13 +33,20 @@ export default function ChatBubble({ userId }: ChatBubbleProps) {
         const nextMessage = array[index + 1];
 
         //다음 메세지랑 동시에 엔터엔터,,,를 했냐마냐
-        const isSameTime = nextMessage?.sender === sender && nextMessage?.time === time;
+        const isSameTime =
+          nextMessage?.sender === sender && new Date(nextMessage?.time).getTime === new Date(time).getTime;
 
         //받은 메세지고, 전에랑 time이 달라짐!
-        const showProfile = index === 0 || prevMessage?.sender !== sender || prevMessage?.time !== time;
+        const showProfile =
+          index === 0 ||
+          prevMessage?.sender !== sender ||
+          new Date(prevMessage.time).getTime !== new Date(time).getTime;
 
         //user가 같고, time이 앞에 메세지랑 같지만, 그 시간에 그 사람이 마지막으로 보낸 메세지임
-        const lastMessage = prevMessage?.sender === sender && prevMessage?.time === time && nextMessage?.time != time;
+        const lastMessage =
+          prevMessage?.sender === sender &&
+          new Date(prevMessage.time).getTime !== new Date(time).getTime &&
+          (new Date(nextMessage?.time).getTime === new Date(time).getTime || !nextMessage);
 
         if (sender != "me") {
           return (
@@ -53,15 +59,19 @@ export default function ChatBubble({ userId }: ChatBubbleProps) {
                 user={sender}
                 message={text}
                 time={time}
-                userId={""}
-                messages={[]}
               />
             </FromContainer>
           );
         } else {
           return (
             <ToWrapper key={Math.random()}>
-              <ToBox showProfile={showProfile} message={text} time={time} />
+              <ToBox
+                lastMessage={lastMessage}
+                isSameTime={isSameTime}
+                showProfile={showProfile}
+                message={text}
+                time={time}
+              />
             </ToWrapper>
           );
         }

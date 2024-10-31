@@ -1,18 +1,11 @@
 import styled from "styled-components";
-import MessageTime from "../MessageTime";
-import { chatType } from "types/chatType";
-import FromMessageBox from "../FromMessageBox";
+import MessageTime from "./MessageTime";
+import FromMessageBox from "./FromMessageBox";
+import { BoxPropType } from "../types/messageBoxProps";
 
-interface FromBoxPropType extends chatType {
-  showProfile: boolean;
-  isSameTime: boolean;
-  lastMessage: boolean;
-  message: string;
-  time: string;
-}
-
-export default function FromBox(props: FromBoxPropType) {
+export default function FromBox(props: BoxPropType) {
   const { user, message, time, showProfile, isSameTime, lastMessage } = props;
+  console.log("냠냠", "마지막?", lastMessage, "같은시간?", isSameTime, "보여저", "showProfile");
 
   return (
     <>

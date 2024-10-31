@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import MessageTime from "./MessageTime";
 import ToMessageBox from "./ToMessageBox";
-import { BoxProps } from "./types/messageBoxProps";
+import { BoxPropType } from "../types/messageBoxProps";
+import MessageTime from "./MessageTime";
 
-export default function ToBox({ showProfile, message, time }: BoxProps) {
+export default function ToBox({ lastMessage, isSameTime, showProfile, message, time }: BoxPropType) {
   return (
     <Wrapper>
-      <MessageTime time={time} />
+      {!isSameTime || lastMessage ? <MessageTime time={time} /> : null}
       <ToMessageBox showProfile={showProfile} message={message} />
     </Wrapper>
   );

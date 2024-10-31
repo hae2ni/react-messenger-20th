@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { MessageBoxProps } from "./types/messageBoxProps";
-import { MessageBoxStyle, TextWrapper } from "./style/messageBoxStye";
+import { MessageBoxStyle, TextWrapper } from "../style/messageBoxStye";
+import { MessageBoxPropType } from "../types/messageBoxProps";
 
-export default function FromMessageBox({ showProfile, message }: MessageBoxProps) {
+export default function FromMessageBox({ showProfile, message }: MessageBoxPropType) {
   return (
     <TextWrapper>
       <MessageText $showProfile={showProfile}>{message}</MessageText>
