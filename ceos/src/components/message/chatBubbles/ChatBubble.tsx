@@ -53,6 +53,8 @@ export default function ChatBubble({ userId }: ChatBubbleProps) {
                 user={sender}
                 message={text}
                 time={time}
+                userId={""}
+                messages={[]}
               />
             </FromContainer>
           );

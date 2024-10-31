@@ -43,12 +43,13 @@ const Container = styled.main<ContainerProps>`
   flex-direction: column;
 
   max-width: var(--app-max-width, 375px);
-  height: 100vh;
+  height: 812px;
   margin-right: auto;
   margin-left: auto;
 
   background-color: ${(props) => (props.$isMessageRoom ? props.theme.colors.profile2 : props.theme.colors.white)};
   background-image: ${(props) => (props.$isMyPage ? `url(${props.image})` : "none")};
+  background-size: 100%;
   border: none;
 `;
 

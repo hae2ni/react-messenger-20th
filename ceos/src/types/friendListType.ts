@@ -4,4 +4,5 @@ export interface friendListType {
   statusMessage: string;
   profile: string | undefined;
   isFavorite?: boolean;
+  id?: string;
 }

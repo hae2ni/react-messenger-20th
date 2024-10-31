@@ -7,14 +7,7 @@ interface StoreState {
   inputValue: string;
   setInputValue: (text: string) => void;
   dummyText: chatType[];
-  addNewText: (userId: string) => void;
-}
-
-interface StoreState {
-  inputValue: string;
-  setInputValue: (text: string) => void;
-  dummyText: chatType[];
-  addNewText: (userId: string) => void;
+  addNewText: (userId?: string) => void;
 }
 
 export const useStore = create<StoreState>()(
