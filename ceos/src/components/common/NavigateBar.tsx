@@ -27,9 +27,9 @@ export default function NavigateBar() {
 
 const Wrapper = styled.nav`
   ${rowFlex}
-  justify-content: space-between;
+  justify-content: space-around;
   height: 64px;
-  margin: 0 16px;
+  width: 100%;
 `;
 
 const DisabledButton = styled.div`

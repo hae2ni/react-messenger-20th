@@ -24,8 +24,8 @@ export const Icon = (Component: SVGComponent) => styled(Component)`
 
 export const SmallIcon = (Component: SVGComponent) => styled(Component)`
   cursor: pointer;
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
 `;
 
 export const ContentContainer = styled.div`
