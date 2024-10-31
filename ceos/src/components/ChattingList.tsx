@@ -18,6 +18,7 @@ export default function ChattingList({ scrollRef, userId }: ChattingListPropType
 const Wrapper = styled.section`
   overflow-y: scroll;
   width: 375px;
+  height: 100vh;
 
   &::-webkit-scrollbar {
     display: none;
