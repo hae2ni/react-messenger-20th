@@ -4,8 +4,13 @@ import { useStore } from "@core/useStore";
 import ToBox from "./message/ToBox";
 import { FRIEND_LIST } from "constant/friends";
 import { ProfileImg } from "./common/ProfileImg";
+import NewChat from "./common/NewChat";
 
-export default function ChatBubble({ userId }) {
+interface ChatBubbleProps {
+  userId: string | undefined;
+}
+
+export default function ChatBubble({ userId }: ChatBubbleProps) {
   const newDummyText = useStore((state) => state.dummyText);
 
   const friendData = newDummyText.find((friend) => friend.userId === userId);
@@ -13,7 +18,11 @@ export default function ChatBubble({ userId }) {
   console.log(friendProfile);
 
   if (!friendData) {
-    return <p>친구가 없는데요?</p>;
+    return (
+      <WrapperNewChat>
+        <NewChat />
+      </WrapperNewChat>
+    );
   }
 
   return (
@@ -69,4 +78,10 @@ const ToWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
+`;
+
+const WrapperNewChat = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
 `;
