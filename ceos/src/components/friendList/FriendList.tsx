@@ -32,5 +32,5 @@ const Wrapper = styled.ul`
 const FriendNumber = styled.p`
   color: ${({ theme }) => theme.colors.gray500};
   ${({ theme }) => theme.fonts.medium12};
-  margin-bottom: 8px;
+  margin: 8px 0;
 `;

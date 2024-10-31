@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import FromBox from "./message/FromBox";
+import FromBox from "./FromBox";
 import { useStore } from "@core/useStore";
-import ToBox from "./message/ToBox";
+import ToBox from "../ToBox";
 import { FRIEND_LIST } from "constant/friends";
-import { ProfileImg } from "./common/ProfileImg";
-import NewChat from "./common/NewChat";
+import { ProfileImg } from "../../common/ProfileImg";
+import NewChat from "../../common/NewChat";
 
 interface ChatBubbleProps {
   userId: string | undefined;

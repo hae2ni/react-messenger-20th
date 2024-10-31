@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ChatBubble from "./ChatBubble";
+import ChatBubble from "./message/chatBubbles/ChatBubble";
 import { RefObject } from "react";
 
 interface ChattingListPropTypes {
