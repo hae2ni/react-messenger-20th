@@ -11,9 +11,7 @@ export default function Header() {
   const location = useLocation();
   const pathname = location.pathname;
 
-  useEffect(() => {
-    console.log(pathname);
-  }, [location]);
+  useEffect(() => {}, [location]);
 
   return (
     <Wrapper>

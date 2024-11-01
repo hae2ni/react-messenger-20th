@@ -5,7 +5,6 @@ import { BoxPropType } from "../types/messageBoxProps";
 
 export default function FromBox(props: BoxPropType) {
   const { user, message, time, showProfile, isSameTime, lastMessage } = props;
-  console.log("냠냠", "마지막?", lastMessage, "같은시간?", isSameTime, "보여저", "showProfile");
 
   return (
     <>
