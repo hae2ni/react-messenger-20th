@@ -17,6 +17,7 @@ export default function ChattingInput() {
   const [isFocus, setIsFocus] = useState(false);
 
   const { userId } = useParams();
+  const [isComposing, setIsComposing] = useState(false);
   const setInputText = useStore((state) => state.setInputValue);
   const addNewText = useStore((state) => state.addNewText);
 
@@ -30,6 +31,7 @@ export default function ChattingInput() {
   }
 
   function handlePressEnter(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (isComposing) return;
     if (e.key == "Enter") {
       e.preventDefault();
       handleText();
@@ -51,6 +53,8 @@ export default function ChattingInput() {
         <PlusIcon />
         <Form onSubmit={handleSubmit}>
           <Input
+            onCompositionStart={() => setIsComposing(true)}
+            onCompositionEnd={() => setIsComposing(false)}
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onFocus={handleFocus}
